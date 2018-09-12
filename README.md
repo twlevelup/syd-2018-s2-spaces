@@ -1,6 +1,7 @@
 # LevelUp Watch Edition App Development Environment
 
 [![Build Status](https://circleci.com/gh/twlevelup/syd-2018-s2-spaces.svg?style=svg)](https://circleci.com/gh/twlevelup/syd-2018-s2-spaces)
+
 [CCTray/CCMenu build status](https://circleci.com/gh/twlevelup/syd-2018-s2-spaces.cc.xml)
 
 This git repo contains all the code you need to prototype apps for the watch.
