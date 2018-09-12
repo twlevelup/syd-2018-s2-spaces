@@ -15,7 +15,7 @@ cd gh-pages-branch
 git init
 git config --local user.email levelup@thoughtworks.com > /dev/null 2>&1
 git config --local user.name levelup > /dev/null 2>&1
-git remote add --fetch origin https://github.com/twlevelup/watch_edition.git
+git remote add --fetch origin https://github.com/twlevelup/syd-2018-s2-spaces.git
 
 
 # switch into the the gh-pages branch

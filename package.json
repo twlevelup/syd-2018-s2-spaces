@@ -5,7 +5,7 @@
   "author": "LevelUp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twlevelup/watch_edition"
+    "url": "https://github.com/twlevelup/syd-2018-s2-spaces"
   },
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --inline --hot",
