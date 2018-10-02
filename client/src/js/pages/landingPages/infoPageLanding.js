@@ -6,6 +6,9 @@ class InfoPageLanding extends BasePage {
   topButtonEvent() {
     this.navigate('/');
   }
+  faceButtonEvent() {
+    this.navigate('infoPage');
+  }
 }
 
 module.exports = InfoPageLanding;
