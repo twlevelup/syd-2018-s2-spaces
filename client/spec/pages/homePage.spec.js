@@ -26,16 +26,20 @@ describe('HomePage', () => {
   });
 
   describe('#leftButtonEvent', () => {
-    it('audioHub plays a sound', () => {
-      spyOn(AudioHub, 'playSound')
-      const page = new HomePage();
+    it('goes to checklist page', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new HomePage(props);
+      spyOn(page, 'navigate');
+
       page.leftButtonEvent();
-      expect(AudioHub.playSound).toBeCalledWith('./sounds/plop.mp3');
+      expect(page.navigate).toHaveBeenCalledWith('checklist');
     });
   });
 
   describe('#rightButtonEvent', () => {
-    it('goes to contacts page', () => {
+    it('goes to SOS page', () => {
       const props = {
         navigate: () => { },
       };
@@ -43,7 +47,7 @@ describe('HomePage', () => {
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('contacts');
+      expect(page.navigate).toHaveBeenCalledWith('SOS');
     });
   });
 
