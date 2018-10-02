@@ -45,12 +45,11 @@ jobs:
 workflows:
   version: 2
   build_test_deploy:
-      jobs:
-        - build:
+    jobs:
+      - build:
           filters:
             branches:
-              ignore: 
-                - gh-pages
+              ignore: /.*/
 
 EOF
 
