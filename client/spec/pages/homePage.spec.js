@@ -47,7 +47,7 @@ describe('HomePage', () => {
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('SOS');
+      expect(page.navigate).toHaveBeenCalledWith('SOSPage');
     });
   });
 

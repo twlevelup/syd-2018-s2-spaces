@@ -41,7 +41,7 @@ class HomePage extends BasePage {
   }
 
   rightButtonEvent() {
-    this.navigate('SOS');
+    this.navigate('SOSPage');
   }
 
   leftButtonEvent() {

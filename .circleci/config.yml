@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  build_test:
     docker:
       - image: circleci/node:10.7.0
     environment:
@@ -16,13 +16,6 @@ jobs:
           key: v1-dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-  test:
-    docker:
-      - image: circleci/node:10.7.0
-    steps:
-      - checkout
-      - restore_cache:
-          key: v1-dependency-cache-{{ checksum "package.json" }}
       - run: npm test
   deploy:
     docker:
@@ -35,20 +28,17 @@ jobs:
       - run: npm run build
       - add_ssh_keys:
           fingerprints:
-            - "d0:18:6c:80:eb:5c:ad:3c:a3:26:85:3d:19:a9:81:0e"
+            - "d5:04:e9:cb:15:04:3e:74:ab:10:1f:3f:7b:28:11:0f"
       - run: ./deploy.sh
 
 workflows:
   version: 2
   build_test_deploy:
       jobs:
-        - build
-        - test:
-            requires:
-              - build
+        - build_test
         - deploy:
             requires:
-              - test
+              - build_test
             filters:
               branches:
                 only: master

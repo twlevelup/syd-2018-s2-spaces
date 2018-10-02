@@ -1,14 +1,15 @@
 const routes = require('../src/js/routes');
 
 describe('routes', () => {
-
   it('all routes should exist', () => {
     expect(routes['/']).toBeDefined();
     expect(routes['contacts']).toBeDefined();
     expect(routes['team']).toBeDefined();
     expect(routes['404']).toBeDefined();
     expect(routes['checklist']).toBeDefined();
-    expect(routes['SOS']).toBeDefined();
+    expect(routes['SOSPage']).toBeDefined();
+    expect(routes['SOSApp']).toBeDefined();
+    expect(routes['infoLandingPage']).toBeDefined();
+    expect(routes['infoPage']).toBeDefined();
   });
-
 });
