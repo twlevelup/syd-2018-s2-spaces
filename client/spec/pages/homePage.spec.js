@@ -35,7 +35,7 @@ describe('HomePage', () => {
   });
 
   describe('#rightButtonEvent', () => {
-    it('goes to contacts page', () => {
+    it('goes to sos page', () => {
       const props = {
         navigate: () => { },
       };
@@ -43,7 +43,7 @@ describe('HomePage', () => {
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('contacts');
+      expect(page.navigate).toHaveBeenCalledWith('SOSPage');
     });
   });
 
