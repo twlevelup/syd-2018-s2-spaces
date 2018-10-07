@@ -60,11 +60,5 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'client/src/sounds', to: 'sounds' }
     ]),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false,
-      },
-    }),
   ],
 };
