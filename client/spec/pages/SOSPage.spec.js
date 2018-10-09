@@ -9,7 +9,7 @@ describe('SOSPage', () => {
         });
     });
 
-    describe('#faceButtonEvent', () => {
+    describe('#leftButtonEvent', () => {
         it('goes to SOS App', () => {
             const props = {
                 navigate: () => { },
@@ -18,7 +18,7 @@ describe('SOSPage', () => {
           const page = new SOSPage(props);
           spyOn(page, 'navigate');
     
-          page.faceButtonEvent();
+          page.leftButtonEvent();
           expect(page.navigate).toHaveBeenCalledWith('SOSApp');
     
         });
