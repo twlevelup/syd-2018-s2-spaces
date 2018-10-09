@@ -4,8 +4,9 @@ describe('SOSPage', () => {
     describe('#render', () => {
         it('should show SOS page', () => {
             const page = new SOSPage();
-            expect(page.render()).toContain("SOS");
-            expect(page.render()).toContain("ICE");
+            expect(page.render()).toContain("YES");
+            expect(page.render()).toContain("Are you safe?");
+            expect(page.render()).toContain("NO");
         });
     });
 
