@@ -5,7 +5,6 @@ const FourOhFour = require('./pages/404Page');
 const ChecklistPage = require('./pages/checklistPage');
 const SOSPage = require('./pages/SOSPage');
 const SOSApp = require('./pages/SOSApp');
-const InfoPageLanding = require('./pages/landingPages/infoPageLanding');
 const InfoPage = require('./pages/InfoPage');
 
 module.exports = {
@@ -16,7 +15,6 @@ module.exports = {
   'checklist': ChecklistPage,
   SOSPage: SOSPage,
   SOSApp: SOSApp,
-  infoLandingPage: InfoPageLanding,
   // Put other landing pages above this line and app pages underneath
   infoPage: InfoPage
 };

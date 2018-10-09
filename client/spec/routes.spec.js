@@ -9,7 +9,6 @@ describe('routes', () => {
     expect(routes['checklist']).toBeDefined();
     expect(routes['SOSPage']).toBeDefined();
     expect(routes['SOSApp']).toBeDefined();
-    expect(routes['infoLandingPage']).toBeDefined();
     expect(routes['infoPage']).toBeDefined();
   });
 });
