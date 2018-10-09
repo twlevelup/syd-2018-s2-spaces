@@ -25,12 +25,4 @@ describe('InfoPage', () => {
       expect(page.navigate).toHaveBeenCalledWith('/');
     });
   });
-
-  // describe('face button', () => {
-  //   it('goes to home page', () => {
-  //     spyOn(page, 'navigate');
-  //     page.faceButtonEvent();
-  //     expect(page.navigate).toHaveBeenCalledWith('/');
-  //   });
-  // });
 });
