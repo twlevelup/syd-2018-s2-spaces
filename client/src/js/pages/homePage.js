@@ -17,15 +17,16 @@ class HomePage extends BasePage {
     this.updateTimeEverySecond();
     const dateTime = this.getDateTime();
     this.date = dateTime.date;
+    this.day = dateTime.day.toUpperCase();
     this.time = dateTime.time;
-    this.logo = logo;
   }
 
   getDateTime() {
-    const dateTime = new Date(Date.now()).toLocaleString('en-AU').split(",");
+    const dateTime = new Date(Date.now()).toLocaleString('en-AU',{hour:"numeric",minute:"numeric",weekday:"long",day:"numeric",month:"numeric",year:"numeric"}).split(",");
     return { 
-      date: dateTime[0], 
-      time: dateTime[1],
+      day: dateTime[0],
+      date: dateTime[1], 
+      time: dateTime[2],
     };
   }
 

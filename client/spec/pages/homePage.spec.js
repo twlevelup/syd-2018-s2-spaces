@@ -18,12 +18,6 @@ describe('HomePage', () => {
     })
   })
 
-  describe('#render', () => {
-    it('should render my page correctly', () => {
-      const page = new HomePage();
-      expect(page.render()).toContain("<div>Hello, Team Spaces!</div>");
-    });
-  });
 
   describe('#leftButtonEvent', () => {
     it('goes to checklist page', () => {
