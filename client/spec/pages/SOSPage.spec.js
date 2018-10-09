@@ -4,7 +4,8 @@ describe('SOSPage', () => {
     describe('#render', () => {
         it('should show SOS page', () => {
             const page = new SOSPage();
-            expect(page.render()).toContain("<div>SOS</div>");
+            expect(page.render()).toContain("SOS");
+            expect(page.render()).toContain("ICE");
         });
     });
 
