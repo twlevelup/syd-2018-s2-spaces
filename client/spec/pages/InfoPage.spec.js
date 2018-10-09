@@ -13,6 +13,9 @@ describe('InfoPage', () => {
 
   it('should render the page', () => {
     expect(page.render()).toContain('<p>Info Page</p>');
+    expect(page.render()).toContain('Strategies');
+    expect(page.render()).toContain('Identifying Abuse');
+    expect(page.render()).toContain('Legal Info');
   });
 
   describe('top button', () => {
