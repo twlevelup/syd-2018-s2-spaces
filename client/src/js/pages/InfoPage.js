@@ -4,10 +4,9 @@ class InfoPage extends BasePage {
   template = require('../../templates/InfoPage.hbs');
 
   topButtonEvent() {
-    this.navigate('infoLandingPage');
+    this.navigate('/');
   }
   faceButtonEvent() {
-    this.navigate('/');
   }
 }
 

@@ -6,7 +6,7 @@ describe('InfoPage', () => {
   let page;
   beforeAll(() => {
     const props = {
-      navigate: () => {}
+      navigate: () => { }
     };
     page = new InfoPage(props);
   });
@@ -15,13 +15,13 @@ describe('InfoPage', () => {
     expect(page.render()).toContain('<p>Info Page</p>');
   });
 
-  // describe('top button', () => {
-  //   it('goes to info landing page', () => {
-  //     spyOn(page, 'navigate');
-  //     page.topButtonEvent();
-  //     expect(page.navigate).toHaveBeenCalledWith('infoLandingPage');
-  //   });
-  // });
+  describe('top button', () => {
+    it('goes to the home page on press', () => {
+      spyOn(page, 'navigate');
+      page.topButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('/');
+    });
+  });
 
   // describe('face button', () => {
   //   it('goes to home page', () => {
