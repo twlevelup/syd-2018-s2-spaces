@@ -52,13 +52,15 @@ describe('HomePage', () => {
   });
 
   describe('#bottomButtonEvent', () => {
-    it('scrolls page down', () => {
-
-      const page = new HomePage({ watchFace });
+    it('Should open info page', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new HomePage(props);
+      spyOn(page, 'navigate');
 
       page.bottomButtonEvent();
-
-      expect(watchFace.scrollTop).toEqual(40);
+      expect(page.navigate).toBeCalledWith("infoPage");
 
     });
   });
@@ -75,11 +77,11 @@ describe('HomePage', () => {
 
   describe('#updateTimeDisplay', () => {
     it('updateTimeDisplays calls clock-time if its in the window', () => {
-      const page = new HomePage();      
+      const page = new HomePage();
 
       watchFace.innerHTML = page.render();
 
-      jest.spyOn(page,"getDateTime");
+      jest.spyOn(page, "getDateTime");
       page.updateTimeDisplay(page.getDateTime);
       expect(page.getDateTime).toHaveBeenCalledTimes(1);
     });
@@ -89,7 +91,7 @@ describe('HomePage', () => {
     it('updateTimeDisplays does not call clock-time if its not in the window', () => {
       const page = new HomePage();
 
-      jest.spyOn(page,"getDateTime");
+      jest.spyOn(page, "getDateTime");
       page.updateTimeDisplay(page.getDateTime);
       expect(page.getDateTime).toHaveBeenCalledTimes(0);
     });

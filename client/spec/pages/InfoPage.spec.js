@@ -11,23 +11,23 @@ describe('InfoPage', () => {
     page = new InfoPage(props);
   });
 
-  it('should render my specific contacts', () => {
+  it('should render the page', () => {
     expect(page.render()).toContain('<p>Info Page</p>');
   });
 
-  describe('top button', () => {
-    it('goes to info landing page', () => {
-      spyOn(page, 'navigate');
-      page.topButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('infoLandingPage');
-    });
-  });
+  // describe('top button', () => {
+  //   it('goes to info landing page', () => {
+  //     spyOn(page, 'navigate');
+  //     page.topButtonEvent();
+  //     expect(page.navigate).toHaveBeenCalledWith('infoLandingPage');
+  //   });
+  // });
 
-  describe('face button', () => {
-    it('goes to home page', () => {
-      spyOn(page, 'navigate');
-      page.faceButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('/');
-    });
-  });
+  // describe('face button', () => {
+  //   it('goes to home page', () => {
+  //     spyOn(page, 'navigate');
+  //     page.faceButtonEvent();
+  //     expect(page.navigate).toHaveBeenCalledWith('/');
+  //   });
+  // });
 });
