@@ -11,7 +11,7 @@ describe('SOSPage', () => {
     });
 
     describe('#bottomButtonEvent', () => {
-        it('goes to SOS App', () => {
+        it('goes to SOS Call', () => {
             const props = {
                 navigate: () => { },
             };
@@ -20,7 +20,7 @@ describe('SOSPage', () => {
           spyOn(page, 'navigate');
     
           page.bottomButtonEvent();
-          expect(page.navigate).toHaveBeenCalledWith('SOSApp');
+          expect(page.navigate).toHaveBeenCalledWith('SOSCall');
     
         });
       });
