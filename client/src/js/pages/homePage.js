@@ -49,7 +49,7 @@ class HomePage extends BasePage {
   }
 
   leftButtonEvent() {
-    this.navigate('checklist');
+    this.navigate('mapPage');
   }
 
   topButtonEvent() {

@@ -6,6 +6,7 @@ const ChecklistPage = require('./pages/checklistPage');
 const SOSPage = require('./pages/SOSPage');
 const SOSCall = require('./pages/SOSCall');
 const InfoPage = require('./pages/InfoPage');
+const MapPage = require('./pages/mapPage');
 
 module.exports = {
   '/': HomePage,
@@ -16,5 +17,7 @@ module.exports = {
   SOSPage: SOSPage,
   SOSCall: SOSCall,
   // Put other landing pages above this line and app pages underneath
-  infoPage: InfoPage
+  infoPage: InfoPage,
+  mapPage: MapPage
+
 };

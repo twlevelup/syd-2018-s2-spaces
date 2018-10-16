@@ -28,7 +28,7 @@ describe('HomePage', () => {
       spyOn(page, 'navigate');
 
       page.leftButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('checklist');
+      expect(page.navigate).toHaveBeenCalledWith('mapPage');
     });
   });
 
