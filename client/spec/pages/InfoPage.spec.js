@@ -11,11 +11,16 @@ describe('InfoPage', () => {
     page = new InfoPage(props);
   });
 
-  it('should render the page', () => {
-    expect(page.render()).toContain('<p>Info Page</p>');
-    expect(page.render()).toContain('Strategies');
-    expect(page.render()).toContain('Identifying Abuse');
-    expect(page.render()).toContain('Legal Info');
+  describe('should render the page', () => {
+    it('should render my specific articles', () => {
+      const articles = [
+        { title: 'Strategies', article: 'strategiesPage', selected: true },
+      ];
+      StorageHub.setData('articles', articles)
+      const page = new InfoPage();
+      page.pageWillLoad();
+      expect(page.render()).toContain("Strategies");
+    });
   });
 
   describe('top button', () => {
@@ -26,3 +31,5 @@ describe('InfoPage', () => {
     });
   });
 });
+
+
