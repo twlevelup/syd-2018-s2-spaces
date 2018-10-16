@@ -1,3 +1,23 @@
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#clock-time {
+  font-size: 80px;
+}
+
 #home {
-  font-style: italic;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  font-weight: bold;
+
+  p {
+    margin: 0;
+  }
+
 }

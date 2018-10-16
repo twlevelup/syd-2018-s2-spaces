@@ -19,14 +19,17 @@ class HomePage extends BasePage {
     this.date = dateTime.date;
     this.day = dateTime.day.toUpperCase();
     this.time = dateTime.time;
+    this.period = dateTime.period;
   }
 
   getDateTime() {
-    const dateTime = new Date(Date.now()).toLocaleString('en-AU',{hour:"numeric",minute:"numeric",weekday:"long",day:"numeric",month:"numeric",year:"numeric"}).split(",");
+    const dateTime = new Date(Date.now()).toLocaleString('en-AU',{hour:"numeric",minute:"numeric",weekday:"long",day:"numeric",month:"numeric",year:"numeric"}).trim().split(",");
+    const [time, period] = dateTime[2].trim().split(' ');
     return { 
       day: dateTime[0],
       date: dateTime[1], 
-      time: dateTime[2],
+      time,
+      period,
     };
   }
 
