@@ -69,6 +69,19 @@ describe('HomePage', () => {
     });
   });
 
+  describe('#faceButtonEvent', () => {
+    it('goes to contacts page', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new HomePage(props);
+      spyOn(page, 'navigate');
+
+      page.faceButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('contacts');
+    });
+  });
+
   describe('#updateTimeDisplay', () => {
     it('updateTimeDisplays calls clock-time if its in the window', () => {
       const page = new HomePage();

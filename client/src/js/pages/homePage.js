@@ -23,11 +23,11 @@ class HomePage extends BasePage {
   }
 
   getDateTime() {
-    const dateTime = new Date(Date.now()).toLocaleString('en-AU',{hour:"numeric",minute:"numeric",weekday:"long",day:"numeric",month:"numeric",year:"numeric"}).trim().split(",");
+    const dateTime = new Date(Date.now()).toLocaleString('en-AU', { hour: "numeric", minute: "numeric", weekday: "long", day: "numeric", month: "numeric", year: "numeric" }).trim().split(",");
     const [time, period] = dateTime[2].trim().split(' ');
-    return { 
+    return {
       day: dateTime[0],
-      date: dateTime[1], 
+      date: dateTime[1],
       time,
       period,
     };
@@ -58,6 +58,10 @@ class HomePage extends BasePage {
 
   bottomButtonEvent() {
     this.navigate('infoPage');
+  }
+
+  faceButtonEvent() {
+    this.navigate('contacts');
   }
 }
 
