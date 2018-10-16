@@ -24,4 +24,19 @@ describe('SOSPage', () => {
     
         });
       });
+
+      describe('#topButtonEvent', () => {
+        it('goes to Home page', () => {
+            const props = {
+                navigate: () => { },
+            };
+    
+          const page = new SOSPage(props);
+          spyOn(page, 'navigate');
+    
+          page.topButtonEvent();
+          expect(page.navigate).toHaveBeenCalledWith('/');
+    
+        });
+      });
 });

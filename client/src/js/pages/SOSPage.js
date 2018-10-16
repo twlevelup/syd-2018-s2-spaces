@@ -6,6 +6,10 @@ class SOSPage extends BasePage {
     bottomButtonEvent() {
       this.navigate('SOSCall');
     }
+   
+    topButtonEvent() {
+      this.navigate('/');
+    }
 }
 
 module.exports = SOSPage;
