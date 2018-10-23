@@ -105,8 +105,11 @@ module.exports = class App {
     }
   }
 
-  navigate(path) {
+  navigate(path, refresh = false) {
     window.location.hash = path;
+    if (refresh) {
+      this.renderPath(path);
+    }
   }
 
   render(element, ViewType, props) {
