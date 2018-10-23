@@ -12,8 +12,11 @@ describe('ContactsPage', () => {
       { name: 'hi', phoneNumber: '1234', selected: true },
       { name: 'hi2', phoneNumber: '12345', selected: false },
     ];
+    const props = {
+      navigate: () => { },
+    };
     StorageHub.setData('contacts', contacts)
-    page = new ContactsPage();
+    page = new ContactsPage(props);
 
   });
 
@@ -51,6 +54,7 @@ describe('ContactsPage', () => {
 
   describe('#rightButtonEvent', () => {
     it('should move the selector down the list', () => {
+      page.pageWillLoad();
       page.rightButtonEvent();
       expect(page.render()).toContain("<span> SELECTED Name: hi2</span>");
       expect(page.render()).toContain("<span> Name: hi</span>");
