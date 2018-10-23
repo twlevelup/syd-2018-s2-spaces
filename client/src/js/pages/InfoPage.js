@@ -5,19 +5,48 @@ class InfoPage extends BasePage {
   template = require('../../templates/InfoPage.hbs');
 
   pageWillLoad() {
-    StorageHub.setData('articles', [
-      { title: 'Strategies', article: 'strategiesPage', selected: true },
-      { title: 'Identifying Abuse', article: 'identifyingAbusePage', selected: false },
-      { title: 'Legal Info', article: 'legalInfoPage', selected: false }
-    ]);
-    this.articles = StorageHub.getData('articles');
+    if (StorageHub.getData('loaded') != true) {
+      StorageHub.setData('articles', [
+        { title: 'Strategies', article: 'strategiesPage' },
+        { title: 'Identifying Abuse', article: 'identifyingAbusePage' },
+        { title: 'Legal Info', article: 'legalInfoPage' },
+      ]);
+      StorageHub.setData('selectedIndex', 0);
+      StorageHub.setData('loaded', true);
+    }
+    this.selectedIdx = StorageHub.getData('selectedIndex');
+    this.articles = StorageHub.getData('articles').map((article, index) => ({
+      ...article,
+      selected: index == this.selectedIdx,
+    }));
   }
 
   topButtonEvent() {
     this.navigate('/');
+    StorageHub.setData('loaded', false);
   }
 
   rightButtonEvent() {
+
+    if (this.selectedIdx < this.articles.length - 1) {
+      StorageHub.setData('selectedIndex', this.selectedIdx + 1);
+    } else {
+      StorageHub.setData('selectedIndex', 0)
+    }
+    this.navigate("infoPage", true);
+  }
+
+  leftButtonEvent() {
+
+    let nextIndex;
+    if (this.selectedIdx == 0) {
+      nextIndex = this.articles.length - 1;
+    } else {
+      nextIndex = this.selectedIdx - 1;
+    }
+
+    StorageHub.setData('selectedIndex', nextIndex);
+    this.navigate("infoPage", true);
   }
 }
 

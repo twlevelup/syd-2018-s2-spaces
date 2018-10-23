@@ -28,7 +28,7 @@ class StorageHub {
   }
 
   getData(field) {
-    return this.store[field];
+    return this.store && this.store[field];
   }
 
   reset() {

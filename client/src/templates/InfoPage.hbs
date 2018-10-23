@@ -2,6 +2,10 @@
 
 <ul>
 {{#each articles}}
-    <li>{{this.title}}</li>
+    {{#if this.selected }}
+        <li>––– {{this.title}} –––</li>
+    {{else}}
+        <li>{{this.title}}</li>
+    {{/if}}
 {{/each}}
 </ul>

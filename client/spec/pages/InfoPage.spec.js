@@ -11,6 +11,28 @@ describe('InfoPage', () => {
     page = new InfoPage(props);
   });
 
+
+  describe('should initialise articles and selectedIndex', () => {
+
+    it('should set defaults when not loaded', () => {
+      page.pageWillLoad();
+      expect(page.articles.length).toBe(3)
+      expect(page.articles[0].selected).toBe(true)
+      expect(StorageHub.getData('loaded')).toBe(true)
+    })
+
+    it('should reuse existing data when loaded', () => {
+      StorageHub.setData('loaded', true)
+      StorageHub.setData('articles', [{title: 'Article 1'}, {title: 'Article 2'}])
+      StorageHub.setData('selectedIndex', 1)
+      page.pageWillLoad();
+      expect(page.articles.length).toBe(2)
+      expect(page.articles[0].selected).toBe(false)
+      expect(page.articles[1].selected).toBe(true)
+    })
+  });  
+
+
   describe('should render the page', () => {
     it('should render my specific articles', () => {
       const articles = [
@@ -29,6 +51,68 @@ describe('InfoPage', () => {
       page.topButtonEvent();
       expect(page.navigate).toHaveBeenCalledWith('/');
     });
+  });
+
+  describe('right button', () => {
+
+    beforeEach(() => {
+      StorageHub.setData('loaded', true);
+      StorageHub.setData('articles', [{title: 'Article 1'}, {title: 'Article 2'}, {title: 'Article 3'}]);
+    })
+    
+    it('reloads the page', () => {
+      StorageHub.setData('selectedIndex', 0);
+      page.pageWillLoad();
+
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.rightButtonEvent();
+      expect(StorageHub.setData).toBeCalledWith('selectedIndex', 1);
+      expect(page.navigate).toHaveBeenCalledWith('infoPage', true);
+    });
+
+    it('should roll over to start of list', () => {
+      StorageHub.setData('selectedIndex', 2);
+      page.pageWillLoad();
+
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.rightButtonEvent();
+      expect(StorageHub.setData).toBeCalledWith('selectedIndex', 0);
+      expect(page.navigate).toHaveBeenCalledWith('infoPage', true);
+ 
+    })
+  });
+
+  describe('left button', () => {
+
+    beforeEach(() => {
+      StorageHub.setData('loaded', true);
+      StorageHub.setData('articles', [{title: 'Article 1'}, {title: 'Article 2'}, {title: 'Article 3'}]);
+    })
+    it('reloads the page', () => {
+      StorageHub.setData('selectedIndex', 1);
+     
+      page.pageWillLoad();
+
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.leftButtonEvent();
+      expect(StorageHub.setData).toBeCalledWith('selectedIndex', 0);
+      expect(page.navigate).toHaveBeenCalledWith('infoPage', true);
+    });
+
+    it('should roll over to end of list', () => {
+      StorageHub.setData('selectedIndex', 0);
+     
+      page.pageWillLoad();
+
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.leftButtonEvent();
+      expect(StorageHub.setData).toBeCalledWith('selectedIndex', 2);
+      expect(page.navigate).toHaveBeenCalledWith('infoPage', true);
+    })
   });
 });
 
