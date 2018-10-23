@@ -25,4 +25,17 @@ describe('checklistPage', () => {
       expect(page.navigate).toHaveBeenCalledWith('problemPage');
     });
   });
+
+  describe('#leftButtonEvent', () => {
+    it('goes to noProblemPage', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new checklistPage(props);
+      spyOn(page, 'navigate');
+
+      page.leftButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('noProblemPage');
+    });
+  });
 });
