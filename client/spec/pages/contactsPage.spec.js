@@ -3,25 +3,40 @@ const StorageHub = require('watch-framework').StorageHub;
 
 describe('ContactsPage', () => {
   let watchFace;
+  let page;
+
   beforeEach(() => {
     document.body.innerHTML = `<div id='watch-face' style='height: 100px; width: 100px;'></div>`;
     watchFace = document.getElementById('watch-face');
+    const contacts = [
+      { name: 'hi', phoneNumber: '1234', selected: true },
+      { name: 'hi2', phoneNumber: '12345', selected: false },
+    ];
+    StorageHub.setData('contacts', contacts)
+    page = new ContactsPage();
+
   });
 
   describe('#render', () => {
     it('should render my specific contacts', () => {
-      const contacts = [
-        { name: 'hi', phoneNumber: '1234' },
-      ];
-      StorageHub.setData('contacts', contacts)
-      const page = new ContactsPage();
       page.pageWillLoad();
-      expect(page.render()).toContain("<span>Name: hi</span>");
-      expect(page.render()).toContain("<span>Phone: 1234</span>");
+      expect(page.render()).toContain("Name: hi");
+      expect(page.render()).toContain("Phone: 1234");
     });
+
+    it('should select the first contact', () => {
+      page.pageWillLoad();
+      expect(page.render()).toContain("<span> SELECTED Name: hi</span>");
+    });
+
+    it('should not select the other contacts', () => {
+      page.pageWillLoad();
+      expect(page.render()).toContain("<span> Name: hi2</span>");
+    });
+
   });
 
-  describe('#leftButtonEvent', () => {
+  describe('#topButtonEvent', () => {
     it('goes to root page', () => {
       const props = {
         navigate: () => { },
@@ -29,8 +44,16 @@ describe('ContactsPage', () => {
       const page = new ContactsPage(props);
       spyOn(page, 'navigate');
 
-      page.leftButtonEvent();
+      page.topButtonEvent();
       expect(page.navigate).toHaveBeenCalledWith('/');
+    });
+  });
+
+  describe('#rightButtonEvent', () => {
+    it('should move the selector down the list', () => {
+      page.rightButtonEvent();
+      expect(page.render()).toContain("<span> SELECTED Name: hi2</span>");
+      expect(page.render()).toContain("<span> Name: hi</span>");
     });
   });
 
