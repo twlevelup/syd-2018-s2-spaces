@@ -1,17 +1,18 @@
+const AlertNotification = require('../notifications/AlertNotification');
 const BasePage = require('watch-framework').BasePage;
+const NotificationHub = require('watch-framework').NotificationHub;
 const maps = require('../../images/maps.jpg');
 
 class mapPage extends BasePage {
-    pageWillLoad() {
-        this.maps = maps
-    }
+  pageWillLoad() {
+    this.maps = maps;
+  }
 
-    template = require('../../templates/mapPage.hbs');
+  template = require('../../templates/mapPage.hbs');
 
-
-    // leftButtonEvent() {
-    //   this.navigate('mapPage');
-    // }
+  bottomButtonEvent() {
+    NotificationHub.show('map');
+  }
 }
 
 module.exports = mapPage;

@@ -1,25 +1,20 @@
 const mapPage = require('../../src/js/pages/mapPage');
+const NotificationHub = require('watch-framework').NotificationHub;
 
 describe('mapPage', () => {
-    describe('#render', () => {
-        it('should show Map page', () => {
-            const page = new mapPage();
-            expect(page.render()).toContain("<div class=\"mapdiv\"><img src=\"\"></div>");
-        });
+  describe('#render', () => {
+    it('should show Map page', () => {
+      const page = new mapPage();
+      expect(page.render()).toContain('<div class="mapdiv"><img src=""></div>');
     });
+  });
 
-    // describe('#leftButtonEvent', () => {
-    //     it('goes to SOS App', () => {
-    //         const props = {
-    //             navigate: () => { },
-    //         };
-    
-    //       const page = new SOSPage(props);
-    //       spyOn(page, 'navigate');
-    
-    //       page.leftButtonEvent();
-    //       expect(page.navigate).toHaveBeenCalledWith('SOSApp');
-    
-    //     });
-    //   });
+  describe('#bottomButtonEvent', () => {
+    it('shows emmergency numbers', () => {
+      const page = new mapPage();
+      NotificationHub.show = jest.fn();
+      page.bottomButtonEvent();
+      expect(NotificationHub.show).toHaveBeenCalledWith('map');
+    });
+  });
 });
