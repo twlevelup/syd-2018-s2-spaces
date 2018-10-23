@@ -7,6 +7,7 @@ describe('routes', () => {
     expect(routes['team']).toBeDefined();
     expect(routes['404']).toBeDefined();
     expect(routes['checklistPage']).toBeDefined();
+    expect(routes['problemPage']).toBeDefined();
     expect(routes['SOSPage']).toBeDefined();
     expect(routes['SOSCall']).toBeDefined();
     expect(routes['infoPage']).toBeDefined();
