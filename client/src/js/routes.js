@@ -13,7 +13,7 @@ module.exports = {
   contacts: ContactsPage,
   team: TeamPage,
   '404': FourOhFour,
-  'checklist': ChecklistPage,
+  'checklistPage': ChecklistPage,
   SOSPage: SOSPage,
   SOSCall: SOSCall,
   // Put other landing pages above this line and app pages underneath

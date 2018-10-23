@@ -20,7 +20,7 @@ describe('HomePage', () => {
 
 
   describe('#leftButtonEvent', () => {
-    it('goes to checklist page', () => {
+    it('goes to maps page', () => {
       const props = {
         navigate: () => { },
       };
@@ -60,12 +60,16 @@ describe('HomePage', () => {
   });
 
   describe('#topButtonEvent', () => {
-    it('scrolls page up', () => {
-      const page = new HomePage({ watchFace });
+    it('Should go to checklist', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new HomePage(props);
+
+      spyOn(page, 'navigate');
 
       page.topButtonEvent();
-
-      expect(watchFace.scrollTop).toEqual(-40);
+      expect(page.navigate).toBeCalledWith("checklistPage");
     });
   });
 
