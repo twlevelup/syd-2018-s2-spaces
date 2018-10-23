@@ -1,7 +1,6 @@
 const checklistPage = require('../../src/js/pages/checklistPage');
 const problemPage = require('../../src/js/pages/problemPage');
 
-
 describe('checklistPage', () => {
   describe('#render', () => {
     it('should render the page with the correct information', () => {
