@@ -1,0 +1,18 @@
+<h1>Contacts</h1>
+<ul>
+  {{#each contacts}}
+  {{#if this.selected}}
+    <li>
+      <span> SELECTED Name: {{this.name}}</span>
+      <br/>
+      <span>Phone: {{this.phoneNumber}}</span>
+    </li>
+  {{else}}
+   <li>
+      <span> Name: {{this.name}}</span>
+      <br/>
+      <span>Phone: {{this.phoneNumber}}</span>
+    </li>
+  {{/if}}
+  {{/each}}
+</ul>
