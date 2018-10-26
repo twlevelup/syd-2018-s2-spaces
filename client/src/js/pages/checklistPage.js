@@ -4,11 +4,11 @@ class ChecklistPage extends BasePage {
   template = require('../../templates/checklistPage.hbs');
 
   rightButtonEvent() {
-    this.navigate('problemPage');
+    this.navigate('noProblemPage');
   }
 
   leftButtonEvent() {
-    this.navigate('noProblemPage');
+    this.navigate('problemPage');
   }
 }
 

@@ -22,7 +22,7 @@ describe('checklistPage', () => {
       spyOn(page, 'navigate');
 
       page.rightButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('problemPage');
+      expect(page.navigate).toHaveBeenCalledWith('noProblemPage');
     });
   });
 
@@ -35,7 +35,7 @@ describe('checklistPage', () => {
       spyOn(page, 'navigate');
 
       page.leftButtonEvent();
-      expect(page.navigate).toHaveBeenCalledWith('noProblemPage');
+      expect(page.navigate).toHaveBeenCalledWith('problemPage');
     });
   });
 });
