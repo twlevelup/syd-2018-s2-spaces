@@ -30,10 +30,7 @@ module.exports = {
   infoPage: InfoPage,
   mapPage: MapPage,
   strategiesPage: StrategiesPage,
-<<<<<<< HEAD
   identifyingAbusePage: IdentifyingAbusePage,
   legalInfoPage: LegalInfoPage,
-=======
   ICE: ICECallPage,
->>>>>>> [Jane/Connor] Add ICE Page left button scrolling &  ICECalling page.
 };
