@@ -1,8 +1,12 @@
 const BasePage = require('watch-framework').BasePage;
 const StorageHub = require('watch-framework').StorageHub;
 
+
 class ContactsPage extends BasePage {
   template = require('../../templates/contactsPage.hbs');
+  homeIcon = require('../../images/homeicon.png')
+  callingIcon = require('../../images/calling.png')
+
   pageWillLoad() {
     this.contacts = StorageHub.getData('contacts');
   }
