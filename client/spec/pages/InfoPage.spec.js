@@ -53,11 +53,45 @@ describe('InfoPage', () => {
     });
   });
 
+  describe('bottom button', () => {
+
+    beforeEach(() => {
+      StorageHub.setData('loaded', true);
+      StorageHub.setData('articles', [
+        {title: 'Article 1', articlePage: 'article1Page'}, 
+        {title: 'Article 2', articlePage: 'article2Page'}, 
+        {title: 'Article 3', articlePage: 'article3Page'}
+      ]);
+    })
+
+    it('goes to the selected article page on press', () => {
+      StorageHub.setData('selectedIndex', 0);
+      page.pageWillLoad();
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.bottomButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('article1Page');
+    });
+
+    it('goes to the selected article page on press', () => {
+      StorageHub.setData('selectedIndex', 2);
+      page.pageWillLoad();
+      spyOn(StorageHub, 'setData');
+      spyOn(page, 'navigate');
+      page.bottomButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('article3Page');
+    });
+  });
+
   describe('right button', () => {
 
     beforeEach(() => {
       StorageHub.setData('loaded', true);
-      StorageHub.setData('articles', [{title: 'Article 1'}, {title: 'Article 2'}, {title: 'Article 3'}]);
+      StorageHub.setData('articles', [
+        {title: 'Article 1'}, 
+        {title: 'Article 2'}, 
+        {title: 'Article 3'},
+      ]);
     })
     
     it('reloads the page', () => {

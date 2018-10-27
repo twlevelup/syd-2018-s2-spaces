@@ -7,9 +7,9 @@ class InfoPage extends BasePage {
   pageWillLoad() {
     if (StorageHub.getData('loaded') != true) {
       StorageHub.setData('articles', [
-        { title: 'Strategies', article: 'strategiesPage' },
-        { title: 'Identifying Abuse', article: 'identifyingAbusePage' },
-        { title: 'Legal Info', article: 'legalInfoPage' },
+        { title: 'Strategies', articlePage: 'strategiesPage' },
+        { title: 'Identifying Abuse', articlePage: 'identifyingAbusePage' },
+        { title: 'Legal Info', articlePage: 'legalInfoPage' },
       ]);
       StorageHub.setData('selectedIndex', 0);
       StorageHub.setData('loaded', true);
@@ -48,6 +48,13 @@ class InfoPage extends BasePage {
     StorageHub.setData('selectedIndex', nextIndex);
     this.navigate("infoPage", true);
   }
+
+  bottomButtonEvent() {
+    this.selectedIdx = StorageHub.getData('selectedIndex');
+    this.navigate(this.articles[this.selectedIdx].articlePage);
+  }
+
+
 }
 
 module.exports = InfoPage;

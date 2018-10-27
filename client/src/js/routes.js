@@ -10,6 +10,8 @@ const SOSCall = require('./pages/SOSCall');
 const InfoPage = require('./pages/InfoPage');
 const MapPage = require('./pages/mapPage');
 
+const StrategiesPage = require('./pages/strategiesPage');
+
 module.exports = {
   '/': HomePage,
   contacts: ContactsPage,
@@ -22,6 +24,6 @@ module.exports = {
   SOSCall: SOSCall,
   // Put other landing pages above this line and app pages underneath
   infoPage: InfoPage,
-  mapPage: MapPage
-
+  mapPage: MapPage,
+  strategiesPage: StrategiesPage,
 };
