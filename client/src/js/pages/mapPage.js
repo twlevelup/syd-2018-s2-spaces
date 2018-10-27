@@ -13,6 +13,10 @@ class mapPage extends BasePage {
   bottomButtonEvent() {
     NotificationHub.show('map');
   }
+
+  topButtonEvent() {
+    this.navigate('/');
+  }
 }
 
 module.exports = mapPage;

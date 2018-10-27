@@ -17,4 +17,17 @@ describe('mapPage', () => {
       expect(NotificationHub.show).toHaveBeenCalledWith('map');
     });
   });
+
+  describe('#topButtonEvent', () => {
+    it('goes to homePage', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new mapPage(props);
+      spyOn(page, 'navigate');
+
+      page.topButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('/');
+    });
+  });
 });
