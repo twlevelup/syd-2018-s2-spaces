@@ -1,9 +1,17 @@
 .container {
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  margin-left: -30px;
+  justify-content: space-between;
+}
+
+#sosPage {
+  display: flex;
   flex-direction: row;
   height: 100%;
   text-align: center;
   align-items: center;
   justify-content: space-between;
- 
 }
