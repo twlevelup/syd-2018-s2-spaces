@@ -1,11 +1,30 @@
-<p>Info Page</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-<ul>
-{{#each articles}}
-    {{#if this.selected }}
-        <li>––– {{this.title}} –––</li>
-    {{else}}
-        <li>{{this.title}}</li>
-    {{/if}}
-{{/each}}
-</ul>
+<img id="homeicon" src="../images/homeicon.png">
+
+<i id="upArrow" class="fas fa-arrow-up"></i>
+
+<div class="infoContainer">
+    <p id="title">Info Page</p>
+    
+
+    <div id="articlesList">
+        <ul>
+        {{#each articles}}
+            {{#if this.selected }}
+                <li>– {{this.title}} –</li>
+            {{else}}
+                <li>{{this.title}}</li>
+            {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+</div>
+
+<i id="downArrow"class="fas fa-arrow-down"></i>
+
+
+<div id="select">
+    SELECT
+</div>
+

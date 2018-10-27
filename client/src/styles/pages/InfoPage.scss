@@ -1,0 +1,32 @@
+#homeicon {
+  height: 30px;
+  position: absolute;
+  left: 112px;
+}
+
+.infoContainer {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  #title {
+    text-align: center;
+    font-weight: bolder;
+  }
+  #articlesList {
+    padding-left: 12px;
+  }
+}
+
+#select {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#watch-face {
+  padding: 0;
+}
+
+#downArrow {
+  position: absolute;
+  padding-right: 10px
+}
