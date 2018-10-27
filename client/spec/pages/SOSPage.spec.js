@@ -16,6 +16,7 @@ describe('SOSPage', () => {
       navigate: () => { },
     };
     beforeEach(() => {
+      document.body.innerHTML = '<div id="sosPageCountdown"></div>'
       jest.useFakeTimers();
       page = new SOSPage(props);
       spyOn(page, 'navigate');
@@ -37,6 +38,7 @@ describe('SOSPage', () => {
       page.pageWillLoad();
       jest.runTimersToTime(10000);
       expect(page.countdown).toBe(0);
+      expect(page.render()).toContain(page.countdown)
       expect(page.navigate).toHaveBeenCalledWith('SOSCall');
 
     })

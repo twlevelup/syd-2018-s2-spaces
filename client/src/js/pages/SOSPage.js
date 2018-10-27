@@ -2,12 +2,11 @@ const BasePage = require('watch-framework').BasePage;
 
 class SOSPage extends BasePage {
 
-  countdown = 10;
   template = require('../../templates/SOSPage.hbs');
 
   pageWillLoad() {
     this.countdown = 10;
-    setInterval(() => this.timerCallBack(), 1000)
+    this.interval = setInterval(() => this.timerCallBack(), 1000)
   }
 
   rightButtonEvent() {
@@ -21,7 +20,10 @@ class SOSPage extends BasePage {
   timerCallBack() {
     this.countdown -= 1;
     if(this.countdown == 0){
+      clearInterval(this.interval);
       this.navigate("SOSCall");
+    } else {
+      document.getElementById('sosPageCountdown').innerText = this.countdown;
     }
   }
 }
