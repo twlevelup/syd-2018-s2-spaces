@@ -22,8 +22,8 @@ class InfoPage extends BasePage {
   }
 
   topButtonEvent() {
-    this.navigate('/');
     StorageHub.setData('loaded', false);
+    this.navigate('/');
   }
 
   rightButtonEvent() {
