@@ -11,6 +11,9 @@ const InfoPage = require('./pages/InfoPage');
 const MapPage = require('./pages/mapPage');
 
 const StrategiesPage = require('./pages/strategiesPage');
+const IdentifyingAbusePage = require('./pages/identifyingAbusePage');
+const LegalInfoPage = require('./pages/legalInfoPage');
+
 
 module.exports = {
   '/': HomePage,
@@ -26,4 +29,6 @@ module.exports = {
   infoPage: InfoPage,
   mapPage: MapPage,
   strategiesPage: StrategiesPage,
+  identifyingAbusePage: IdentifyingAbusePage,
+  legalInfoPage: LegalInfoPage,
 };

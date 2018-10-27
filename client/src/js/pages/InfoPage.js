@@ -53,8 +53,6 @@ class InfoPage extends BasePage {
     this.selectedIdx = StorageHub.getData('selectedIndex');
     this.navigate(this.articles[this.selectedIdx].articlePage);
   }
-
-
 }
 
 module.exports = InfoPage;

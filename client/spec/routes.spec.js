@@ -11,5 +11,8 @@ describe('routes', () => {
     expect(routes['SOSPage']).toBeDefined();
     expect(routes['SOSCall']).toBeDefined();
     expect(routes['infoPage']).toBeDefined();
+    expect(routes['strategiesPage']).toBeDefined();
+    expect(routes['legalInfoPage']).toBeDefined();
+    expect(routes['identifyingAbusePage']).toBeDefined();
   });
 });
