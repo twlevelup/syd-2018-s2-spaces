@@ -9,6 +9,7 @@ const SOSPage = require('./pages/SOSPage');
 const SOSCall = require('./pages/SOSCall');
 const InfoPage = require('./pages/InfoPage');
 const MapPage = require('./pages/mapPage');
+const ICECallPage = require('./pages/ICECallPage');
 
 const StrategiesPage = require('./pages/strategiesPage');
 const IdentifyingAbusePage = require('./pages/identifyingAbusePage');
@@ -29,6 +30,10 @@ module.exports = {
   infoPage: InfoPage,
   mapPage: MapPage,
   strategiesPage: StrategiesPage,
+<<<<<<< HEAD
   identifyingAbusePage: IdentifyingAbusePage,
   legalInfoPage: LegalInfoPage,
+=======
+  ICE: ICECallPage,
+>>>>>>> [Jane/Connor] Add ICE Page left button scrolling &  ICECalling page.
 };

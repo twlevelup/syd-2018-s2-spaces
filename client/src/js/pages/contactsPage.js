@@ -32,12 +32,30 @@ class ContactsPage extends BasePage {
     this.navigate('contacts', true);
   }
 
+  leftButtonEvent() {
+    let nextContact;
+    for (let i = this.contacts.length -1; i > -1; i--) {
+      let selectedContact = this.contacts[i];
+      if (selectedContact.selected) {
+        this.contacts[i].selected = false;
+        if (i == 0){
+          this.contacts[this.contacts.length - 1].selected = true;
+          nextContact = this.contacts[this.contacts.length-1];
+        } else{
+          this.contacts[i-1].selected = true;
+          nextContact = this.contacts[i-1];
+        }
+        break;
+      }
+    }
+    StorageHub.setData('contacts', this.contacts);
+    StorageHub.setData('selectedContact', nextContact)
+    this.navigate('contacts', true);
+  }
+
   bottomButtonEvent() {
     //PRESS TO CALL A SELECTED CONTACT
-    const props = {
-      navigate: () => { },
-      contact: StorageHub.getData("selectedContact"),
-    }
+    this.navigate("ICE")
   }
 
 

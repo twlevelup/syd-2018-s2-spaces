@@ -30,7 +30,7 @@ describe('ContactsPage', () => {
 
     it('should select the first contact', () => {
       page.pageWillLoad();
-      expect(page.render()).toContain("<span> SELECTED Name: hi</span>");
+      expect(page.render()).toContain("<span> --- Name: hi ---</span>");
     });
 
     it('should not select the other contacts', () => {
@@ -74,27 +74,20 @@ describe('ContactsPage', () => {
       }
 
       
-      expect(page.render()).toContain("<span> SELECTED Name: " + selectedItem + "</span>");
+      expect(page.render()).toContain("<span> --- Name: " + selectedItem + " ---</span>");
       if (nextItem != "") {
         expect(page.render()).toContain("<span> Name: " + nextItem + "</span>");
       }
     });
   });
 
-  // describe('#bottomButtonEvent', () => {
-  //   it('should call the selected contact', () => {
-  //     const props = {
-  //       navigate: () => { },
-  //     };
-  //     const page = new ContactsPage(props);
-  //     spyOn(page, 'navigate');
+  describe('#bottomButtonEvent', () => {
+    it('should call the selected contact', () => {
+      spyOn(page, 'navigate');
+      page.bottomButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('ICE');
+    });
 
-  //     page.bottomButtonEvent();
-  //     expect(page.navigate).toHaveBeenCalledWith('ICECall');
-  //     page.pageWillLoad();
-  //     expect(page.render()).toContain("Name: hi");
-  //   });
-
-  // });
+  });
 
 });
