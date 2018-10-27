@@ -10,16 +10,23 @@ class SOSPage extends BasePage {
   }
 
   rightButtonEvent() {
+    clearInterval(this.interval);
     this.navigate('SOSCall');
   }
 
   leftButtonEvent() {
+    clearInterval(this.interval);
+    this.navigate('/');
+  }
+
+  topButtonEvent() {
+    clearInterval(this.interval);
     this.navigate('/');
   }
 
   timerCallBack() {
     this.countdown -= 1;
-    if(this.countdown == 0){
+    if (this.countdown == 0) {
       clearInterval(this.interval);
       this.navigate("SOSCall");
     } else {
