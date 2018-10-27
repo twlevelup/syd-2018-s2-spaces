@@ -10,7 +10,7 @@ describe('SOSPage', () => {
         });
     });
 
-    describe('#bottomButtonEvent', () => {
+    describe('#rightButtonEvent', () => {
         it('goes to SOS Call', () => {
             const props = {
                 navigate: () => { },
@@ -19,13 +19,13 @@ describe('SOSPage', () => {
           const page = new SOSPage(props);
           spyOn(page, 'navigate');
     
-          page.bottomButtonEvent();
+          page.rightButtonEvent();
           expect(page.navigate).toHaveBeenCalledWith('SOSCall');
     
         });
       });
 
-      describe('#topButtonEvent', () => {
+      describe('#leftButtonEvent', () => {
         it('goes to Home page', () => {
             const props = {
                 navigate: () => { },
@@ -33,8 +33,8 @@ describe('SOSPage', () => {
     
           const page = new SOSPage(props);
           spyOn(page, 'navigate');
-    
-          page.topButtonEvent();
+  
+          page.leftButtonEvent();
           expect(page.navigate).toHaveBeenCalledWith('/');
     
         });

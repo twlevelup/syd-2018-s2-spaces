@@ -3,11 +3,11 @@ const BasePage = require('watch-framework').BasePage;
 class SOSPage extends BasePage {
     template = require('../../templates/SOSPage.hbs');
 
-    bottomButtonEvent() {
+    rightButtonEvent() {
       this.navigate('SOSCall');
     }
    
-    topButtonEvent() {
+    leftButtonEvent() {
       this.navigate('/');
     }
 }
