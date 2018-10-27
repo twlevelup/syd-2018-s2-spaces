@@ -7,6 +7,7 @@
 .infoContainer {
   margin-top: 50px;
   margin-bottom: 20px;
+  margin-left: -22px;
   font-size: 17px;
   #title {
     text-align: center;
@@ -22,11 +23,14 @@
   text-align: center;
 }
 
-#watch-face {
-  padding: 0;
-}
-
 #downArrow {
   position: absolute;
-  padding-right: 10px
+  right: 1px;
+  top: 110px;
+}
+
+#upArrow {
+  position: absolute;
+  left: 1px;
+  top: 110px;
 }

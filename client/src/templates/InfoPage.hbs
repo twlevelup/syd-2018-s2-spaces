@@ -1,15 +1,14 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-<img id="homeicon" src="../images/homeicon.png">
 
-<i id="upArrow" class="fas fa-arrow-up"></i>
+<img id="homeicon" src="../images/homeicon.png">
 
 <div class="infoContainer">
     <p id="title">Info Page</p>
     
 
     <div id="articlesList">
-        <ul>
+        <ol>
         {{#each articles}}
             {{#if this.selected }}
                 <li>– {{this.title}} –</li>
@@ -17,14 +16,16 @@
                 <li>{{this.title}}</li>
             {{/if}}
         {{/each}}
-        </ul>
+        </ol>
+    </div>
+
+    <div id="select">
+    SELECT
     </div>
 </div>
 
+
+
+<i id="upArrow" class="fas fa-arrow-up"></i>
 <i id="downArrow"class="fas fa-arrow-down"></i>
-
-
-<div id="select">
-    SELECT
-</div>
 
