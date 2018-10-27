@@ -11,6 +11,7 @@ describe('ContactsPage', () => {
     const contacts = [
       { name: 'hi', phoneNumber: '1234', selected: true },
       { name: 'hi2', phoneNumber: '12345', selected: false },
+      { name: 'hi3', phoneNumber: '123456', selected: false },
     ];
     const props = {
       navigate: () => { },
@@ -55,10 +56,45 @@ describe('ContactsPage', () => {
   describe('#rightButtonEvent', () => {
     it('should move the selector down the list', () => {
       page.pageWillLoad();
+
       page.rightButtonEvent();
-      expect(page.render()).toContain("<span> SELECTED Name: hi2</span>");
-      expect(page.render()).toContain("<span> Name: hi</span>");
+
+      const contacts = StorageHub.getData("contacts")
+      let selectedItem = "";
+      let nextItem = "";
+      for (let i = 0; i < contacts.length; i++) {
+        const contact = contacts[i];
+        if (contact.selected) {
+          selectedItem = contact.name;
+          if (i < contacts.length - 1) {
+            nextItem = contacts[i + 1].name
+          }
+          break;
+        }
+      }
+
+      
+      expect(page.render()).toContain("<span> SELECTED Name: " + selectedItem + "</span>");
+      if (nextItem != "") {
+        expect(page.render()).toContain("<span> Name: " + nextItem + "</span>");
+      }
     });
   });
+
+  // describe('#bottomButtonEvent', () => {
+  //   it('should call the selected contact', () => {
+  //     const props = {
+  //       navigate: () => { },
+  //     };
+  //     const page = new ContactsPage(props);
+  //     spyOn(page, 'navigate');
+
+  //     page.bottomButtonEvent();
+  //     expect(page.navigate).toHaveBeenCalledWith('ICECall');
+  //     page.pageWillLoad();
+  //     expect(page.render()).toContain("Name: hi");
+  //   });
+
+  // });
 
 });
