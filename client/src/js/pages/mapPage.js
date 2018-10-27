@@ -10,10 +10,6 @@ class mapPage extends BasePage {
 
   template = require('../../templates/mapPage.hbs');
 
-  bottomButtonEvent() {
-    NotificationHub.show('map');
-  }
-
   topButtonEvent() {
     this.navigate('/');
   }

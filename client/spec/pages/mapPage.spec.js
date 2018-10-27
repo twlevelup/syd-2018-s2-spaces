@@ -9,15 +9,6 @@ describe('mapPage', () => {
     });
   });
 
-  describe('#bottomButtonEvent', () => {
-    it('shows emmergency numbers', () => {
-      const page = new mapPage();
-      NotificationHub.show = jest.fn();
-      page.bottomButtonEvent();
-      expect(NotificationHub.show).toHaveBeenCalledWith('map');
-    });
-  });
-
   describe('#topButtonEvent', () => {
     it('goes to homePage', () => {
       const props = {
