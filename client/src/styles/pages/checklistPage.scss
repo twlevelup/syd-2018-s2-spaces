@@ -8,6 +8,7 @@
 .checklist {
   margin-top: 50px;
   margin-bottom: 20px;
+  font-weight: bold;
   font-size: 17px;
   text-align: center;
   .content {
@@ -18,9 +19,13 @@
 #yes {
   float: left;
   margin-left: 3px;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 #no {
   float: right;
   margin-right: 12px;
+  font-weight: bold;
+  font-size: 17px;
 }
