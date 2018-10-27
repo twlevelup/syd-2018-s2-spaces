@@ -5,9 +5,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.icon {
+ z-index: 9999999;
+}
+#emergencyInfo{
+  font-size: 12px;
+  color: #ff9900;
+}
 
 #clock-time {
-  font-size: 80px;
+  font-size: 50px;
+}
+
+#clock-date {
+  font-size: 20px;
+  margin: 10px !important;
+}
+
+#clock-date {
+  font-size: 20px;
+}
+
+
+#clock-day {
+  font-size: 15px;
 }
 
 #home {
@@ -22,17 +43,23 @@
 
 #righticon{
   position: absolute;
-  right: 1px;
-  top: 101px;
+  right: -1px;
+  top: 73px;
 }
 #lefticon{
   position: absolute;
   left: 1px;
-  top: 101px;
+  top: 73px;
 }
 #topicon{
   position: absolute;
-  left: 113px;
-  top: -3px;
+  left: 117px;
+  top: -36px;
+}
+
+#bottomicon{
+  position: absolute;
+  left: 117px;
+  bottom: -35px;
 }
 }

@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <div id="home" class="center">
-  <p><span id="clock-time">{{time}}</span> <span id="clock-period">{{period}}</span></p>
+  <p><span id="clock-time">{{time}}</span><span id="clock-period">{{period}}</span></p>
   <p id="clock-day">{{day}}</p>
   <p id="clock-date">{{date}}</p>
-  <i id="righticon" class="fas fa-exclamation-triangle"></i>
-  <i id="lefticon"class="fas fa-map-marker-alt"></i>
-  <i id="topicon"class="fas fa-list-ul"></i>
-  <i id="bottomicon" class="fas fa-info-circle"></i>
+  <p id="emergencyInfo">Press watch face to see emergency contacts</p>
+  <i id="righticon" class="icon fas fa-xs fa-phone"></i>
+  <i id="lefticon"class="icon fas fa-xs fa-map-marker-alt"></i>
+  <i id="topicon"class="icon fas fa-xs fa-list-ul"></i>
+  <i id="bottomicon" class="icon fa-xs fas fa-info-circle"></i>
+  {{!-- <img id="righticon fa-xs" src="{{sosImage}}"> --}}
 </div>
