@@ -10,6 +10,10 @@ class ChecklistPage extends BasePage {
   leftButtonEvent() {
     this.navigate('problemPage');
   }
+
+  topButtonEvent() {
+    this.navigate('/');
+  }
 }
 
 module.exports = ChecklistPage;

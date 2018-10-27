@@ -6,10 +6,10 @@ describe('checklistPage', () => {
     it('should render the page with the correct information', () => {
       const page = new checklistPage();
       page.pageWillLoad();
-
-      expect(page.render()).toContain("Does someone beat you on a regular basis?");
-      expect(page.render()).toContain("Yes");
-      expect(page.render()).toContain("No");
+      expect(page.render()).toContain('img')
+      expect(page.render()).toContain('Does someone beat you on a regular basis?');
+      expect(page.render()).toContain('Yes');
+      expect(page.render()).toContain('No');
     });
   });
 
@@ -36,6 +36,19 @@ describe('checklistPage', () => {
 
       page.leftButtonEvent();
       expect(page.navigate).toHaveBeenCalledWith('problemPage');
+    });
+  });
+
+  describe('#topButtonEvent', () => {
+    it('goes to homePage', () => {
+      const props = {
+        navigate: () => { },
+      };
+      const page = new checklistPage(props);
+      spyOn(page, 'navigate');
+
+      page.topButtonEvent();
+      expect(page.navigate).toHaveBeenCalledWith('/');
     });
   });
 });

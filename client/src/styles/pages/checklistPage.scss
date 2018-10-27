@@ -1,11 +1,26 @@
-#question {
-  margin-bottom: 70px;
+#homeicon {
+  height: 30px;
+  position: absolute;
+  left: 112px;
+}
+
+
+.checklist {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  text-align: center;
+  .content {
+    margin-top: 90px;
+  }
 }
 
 #yes {
   float: left;
+  margin-left: 3px;
 }
 
 #no {
   float: right;
+  margin-right: 12px;
 }
