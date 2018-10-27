@@ -1,18 +1,38 @@
-<h1>Contacts</h1>
-<ul>
-  {{#each contacts}}
-  {{#if this.selected}}
-    <li>
-      <span> --- Name: {{this.name}} ---</span>
-      <br/>
-      <span>Phone: {{this.phoneNumber}}</span>
-    </li>
-  {{else}}
-   <li>
-      <span> Name: {{this.name}}</span>
-      <br/>
-      <span>Phone: {{this.phoneNumber}}</span>
-    </li>
-  {{/if}}
-  {{/each}}
-</ul>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+  crossorigin="anonymous">
+
+
+<div style="text-align: center">
+  <img src="../images/homeicon.png" height="30px" width="30px">
+</div>
+<div id="everything">
+  <h2>Contacts</h2>
+  <div id="up_arrow" style="float: left">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <div id="down_arrow" style="float:right">
+    <i class="fas fa-arrow-down"></i>
+  </div>
+  <div id="list">
+    <ul>
+      {{#each contacts}}
+      {{#if this.selected}}
+      <li>
+        <span> --- Name: {{this.name}} ---</span>
+        <br/>
+        <span>Phone: {{this.phoneNumber}}</span>
+      </li>
+      {{else}}
+      <li>
+        <span> Name: {{this.name}}</span>
+        <br />
+        <span>Phone: {{this.phoneNumber}}</span>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div style="text-align: center">
+  <img src="../images/calling.png" height="30px" width="30px">
+</div>
